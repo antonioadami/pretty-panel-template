@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { faChartBar } from '@fortawesome/free-solid-svg-icons';
+// import { faChartBar } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-
+  faChartBar = faChartBar;
 }

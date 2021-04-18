@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [SidebarComponent],
-  imports: [],
+  imports: [RouterModule, FontAwesomeModule],
   providers: [],
-  exports: [SidebarComponent]
+  exports: [SidebarComponent],
 })
 export class ComponentsModule {}
