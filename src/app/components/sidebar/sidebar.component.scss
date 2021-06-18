@@ -47,7 +47,7 @@
 
           // padding-left: 1rem;
 
-          color: white;
+          color: $app-background;
           font-weight: 500;
 
           text-decoration: none;
@@ -68,7 +68,7 @@
             height: 45px;
             width: 22.5px;
 
-            box-shadow: 0 -22.5px 0 0 white;
+            box-shadow: 0 -22.5px 0 0 $app-background;
           }
 
           &:hover::after,
@@ -83,13 +83,13 @@
             height: 45px;
             width: 22.5px;
 
-            box-shadow: 0 22.5px 0 0 white;
+            box-shadow: 0 22.5px 0 0 $app-background;
           }
 
 
           &:hover ,&.active {
             color: $app-dark-blue;
-            background-color: white;
+            background-color: $app-background;
             font-weight: 600;
           }
 
