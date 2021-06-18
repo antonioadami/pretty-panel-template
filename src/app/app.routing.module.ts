@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
-    {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'panel'
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'panel',
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: {
+      title: 'Dashboard',
     },
-    {
-        path: 'panel',
-        loadChildren: () => import('./pages/panel/panel.module').then(m => m.PanelModule)
-    },
-]
+  },
+];
 
 @NgModule({
-    imports: [ RouterModule.forRoot(routes, {useHash: false}) ],
-    exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule{
-
-}
+export class AppRoutingModule {}
