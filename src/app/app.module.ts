@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgApexchartsModule } from 'ng-apexcharts';
+
+import { MatTableModule } from '@angular/material/table';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ComponentsModule } from './components/components.module';
@@ -21,6 +24,8 @@ import { TablesComponent } from './pages/tables/tables.component';
     ComponentsModule,
 
     NgApexchartsModule,
+
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -17,16 +17,21 @@ const routes: Routes = [
     },
   },
   {
-    path: 'table',
+    path: 'tables',
     component: TablesComponent,
     data: {
-      title: 'Table',
+      title: 'Tables',
     },
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: false, relativeLinkResolution: 'legacy' })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      useHash: false,
+      relativeLinkResolution: 'legacy',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
