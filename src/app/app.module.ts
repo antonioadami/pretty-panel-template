@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -26,6 +27,7 @@ import { TablesComponent } from './pages/tables/tables.component';
     NgApexchartsModule,
 
     MatTableModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -25,7 +27,17 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./tables.component.scss'],
 })
 export class TablesComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  faEdit = faEdit;
+
+  faTrash = faTrash;
+
+  displayedColumns: string[] = [
+    'position',
+    'name',
+    'weight',
+    'symbol',
+    'actions',
+  ];
 
   dataSource = ELEMENT_DATA;
 }
