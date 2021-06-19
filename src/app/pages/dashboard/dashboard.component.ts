@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import {
   ChartComponent,
@@ -12,9 +12,12 @@ import {
   ApexGrid,
   ApexTitleSubtitle,
   ApexLegend,
+  ApexPlotOptions,
+  ApexFill,
+  ApexNonAxisChartSeries,
 } from 'ng-apexcharts';
 
-export type ChartOptions = {
+export type LineChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
   xaxis: ApexXAxis;
@@ -28,19 +31,45 @@ export type ChartOptions = {
   title: ApexTitleSubtitle;
 };
 
+export type BarChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  dataLabels: ApexDataLabels;
+  plotOptions: ApexPlotOptions;
+  yaxis: ApexYAxis;
+  xaxis: ApexXAxis;
+  fill: ApexFill;
+  title: ApexTitleSubtitle;
+};
+
+export type GaugeChartOptions = {
+  series: ApexNonAxisChartSeries;
+  chart: ApexChart;
+  labels: string[];
+  plotOptions: ApexPlotOptions;
+  fill: ApexFill;
+  title: ApexTitleSubtitle;
+};
+
 @Component({
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   @ViewChild('chart') chart: ChartComponent;
 
-  public chartOptions: Partial<ChartOptions>;
+  public lineChartOptions: Partial<LineChartOptions>;
 
-  constructor() {
-    console.log('opa');
+  public barChartOptions: Partial<BarChartOptions>;
 
-    this.chartOptions = {
+  public gaugeChartOptions1: Partial<GaugeChartOptions>;
+
+  public gaugeChartOptions2: Partial<GaugeChartOptions>;
+
+  public gaugeChartOptions3: Partial<GaugeChartOptions>;
+
+  ngOnInit(): void {
+    this.lineChartOptions = {
       series: [
         {
           name: 'High - 2013',
@@ -52,7 +81,7 @@ export class DashboardComponent {
         },
       ],
       chart: {
-        height: 350,
+        height: 400,
         type: 'line',
         dropShadow: {
           enabled: true,
@@ -74,7 +103,7 @@ export class DashboardComponent {
         curve: 'smooth',
       },
       title: {
-        text: 'Average High & Low Temperature',
+        text: 'Line Chart Example',
         align: 'left',
       },
       grid: {
@@ -106,6 +135,288 @@ export class DashboardComponent {
         floating: true,
         offsetY: -25,
         offsetX: -5,
+      },
+    };
+
+    this.barChartOptions = {
+      series: [
+        {
+          name: 'Example',
+          data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
+        },
+      ],
+      chart: {
+        height: 400,
+        type: 'bar',
+      },
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            position: 'top', // top, center, bottom
+          },
+        },
+      },
+      dataLabels: {
+        enabled: true,
+        formatter(val) {
+          return `${val}%`;
+        },
+        offsetY: -20,
+        style: {
+          fontSize: '12px',
+          colors: ['#304758'],
+        },
+      },
+
+      xaxis: {
+        categories: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
+        position: 'top',
+        labels: {
+          offsetY: -18,
+        },
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+        crosshairs: {
+          fill: {
+            type: 'gradient',
+            gradient: {
+              colorFrom: '#D8E3F0',
+              colorTo: '#BED1E6',
+              stops: [0, 100],
+              opacityFrom: 0.4,
+              opacityTo: 0.5,
+            },
+          },
+        },
+        tooltip: {
+          enabled: true,
+          offsetY: -35,
+        },
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          type: 'horizontal',
+          shadeIntensity: 0.25,
+          gradientToColors: undefined,
+          inverseColors: true,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [50, 0, 100, 100],
+        },
+      },
+      yaxis: {
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+        labels: {
+          show: false,
+          formatter(val) {
+            return `${val}%`;
+          },
+        },
+      },
+      title: {
+        text: 'Bar Chart Example',
+        floating: false,
+        offsetY: 370,
+        align: 'center',
+        style: {
+          color: '#444',
+        },
+        margin: 24,
+      },
+    };
+
+    this.gaugeChartOptions1 = {
+      series: [76],
+      chart: {
+        type: 'radialBar',
+        height: '250px',
+      },
+      plotOptions: {
+        radialBar: {
+          startAngle: -135,
+          endAngle: 135,
+          track: {
+            background: '#e7e7e7',
+            strokeWidth: '97%',
+            margin: 5, // margin is in pixels
+            dropShadow: {
+              enabled: true,
+              top: 2,
+              left: 0,
+              opacity: 0.31,
+              blur: 2,
+            },
+          },
+          dataLabels: {
+            name: {
+              show: false,
+            },
+            total: {
+              show: true,
+              label: 'Total',
+            },
+            value: {
+              offsetY: -2,
+              fontSize: '22px',
+            },
+          },
+        },
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          shadeIntensity: 0.4,
+          inverseColors: false,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 50, 53, 91],
+        },
+      },
+      labels: ['Average Results'],
+      title: {
+        text: 'Gauge Chart Example',
+        align: 'center',
+        floating: false,
+        margin: 0,
+      },
+    };
+
+    this.gaugeChartOptions2 = {
+      series: [55, 32],
+      chart: {
+        type: 'radialBar',
+        height: '250px',
+      },
+      plotOptions: {
+        radialBar: {
+          startAngle: -135,
+          endAngle: 135,
+          track: {
+            background: '#e7e7e7',
+            strokeWidth: '97%',
+            margin: 5, // margin is in pixels
+            dropShadow: {
+              enabled: true,
+              top: 2,
+              left: 0,
+              opacity: 0.31,
+              blur: 2,
+            },
+          },
+          dataLabels: {
+            name: {
+              show: false,
+            },
+            total: {
+              show: true,
+              label: 'Total',
+            },
+            value: {
+              offsetY: -2,
+              fontSize: '22px',
+            },
+          },
+        },
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          shadeIntensity: 0.4,
+          inverseColors: false,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 50, 53, 91],
+        },
+      },
+      labels: ['Average Results'],
+      title: {
+        text: 'Gauge Chart Example',
+        align: 'center',
+        floating: false,
+        margin: 0,
+      },
+    };
+
+    this.gaugeChartOptions3 = {
+      series: [25, 59, 84],
+      chart: {
+        type: 'radialBar',
+        height: '250px',
+      },
+      plotOptions: {
+        radialBar: {
+          startAngle: -135,
+          endAngle: 135,
+          track: {
+            background: '#e7e7e7',
+            strokeWidth: '97%',
+            margin: 5, // margin is in pixels
+            dropShadow: {
+              enabled: true,
+              top: 2,
+              left: 0,
+              opacity: 0.31,
+              blur: 2,
+            },
+          },
+          dataLabels: {
+            name: {
+              show: false,
+            },
+            total: {
+              show: true,
+              label: 'Total',
+            },
+            value: {
+              offsetY: -2,
+              fontSize: '22px',
+            },
+          },
+        },
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          shadeIntensity: 0.4,
+          inverseColors: false,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 50, 53, 91],
+        },
+      },
+      labels: ['Average Results'],
+      title: {
+        text: 'Gauge Chart Example',
+        align: 'center',
+        floating: false,
+        margin: 0,
       },
     };
   }

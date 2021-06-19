@@ -1,74 +1,72 @@
 
 <div class="body">
 
-  <div class="chart-row">
+  <div class="gauge-chart-row">
     <div class="chart">
       <apx-chart
-        [series]="chartOptions.series"
-        [chart]="chartOptions.chart"
-        [xaxis]="chartOptions.xaxis"
-        [stroke]="chartOptions.stroke"
-        [colors]="chartOptions.colors"
-        [dataLabels]="chartOptions.dataLabels"
-        [legend]="chartOptions.legend"
-        [markers]="chartOptions.markers"
-        [grid]="chartOptions.grid"
-        [yaxis]="chartOptions.yaxis"
-        [title]="chartOptions.title"
+        [series]="gaugeChartOptions1.series"
+        [chart]="gaugeChartOptions1.chart"
+        [plotOptions]="gaugeChartOptions1.plotOptions"
+        [labels]="gaugeChartOptions1.labels"
+        [fill]="gaugeChartOptions1.fill"
+        [title]="gaugeChartOptions1.title"
+        ></apx-chart>
+    </div>
+
+    <div class="chart">
+      <apx-chart
+        [series]="gaugeChartOptions2.series"
+        [chart]="gaugeChartOptions2.chart"
+        [plotOptions]="gaugeChartOptions2.plotOptions"
+        [labels]="gaugeChartOptions2.labels"
+        [fill]="gaugeChartOptions2.fill"
+        [title]="gaugeChartOptions2.title"
+
       ></apx-chart>
     </div>
 
     <div class="chart">
       <apx-chart
-        [series]="chartOptions.series"
-        [chart]="chartOptions.chart"
-        [xaxis]="chartOptions.xaxis"
-        [stroke]="chartOptions.stroke"
-        [colors]="chartOptions.colors"
-        [dataLabels]="chartOptions.dataLabels"
-        [legend]="chartOptions.legend"
-        [markers]="chartOptions.markers"
-        [grid]="chartOptions.grid"
-        [yaxis]="chartOptions.yaxis"
-        [title]="chartOptions.title"
-      ></apx-chart>
-    </div>
-  </div>
-
-  <div class="chart-row">
-    <div class="chart">
-      <apx-chart
-        [series]="chartOptions.series"
-        [chart]="chartOptions.chart"
-        [xaxis]="chartOptions.xaxis"
-        [stroke]="chartOptions.stroke"
-        [colors]="chartOptions.colors"
-        [dataLabels]="chartOptions.dataLabels"
-        [legend]="chartOptions.legend"
-        [markers]="chartOptions.markers"
-        [grid]="chartOptions.grid"
-        [yaxis]="chartOptions.yaxis"
-        [title]="chartOptions.title"
-      ></apx-chart>
-    </div>
-
-    <div class="chart">
-      <apx-chart
-        [series]="chartOptions.series"
-        [chart]="chartOptions.chart"
-        [xaxis]="chartOptions.xaxis"
-        [stroke]="chartOptions.stroke"
-        [colors]="chartOptions.colors"
-        [dataLabels]="chartOptions.dataLabels"
-        [legend]="chartOptions.legend"
-        [markers]="chartOptions.markers"
-        [grid]="chartOptions.grid"
-        [yaxis]="chartOptions.yaxis"
-        [title]="chartOptions.title"
-      ></apx-chart>
+        [series]="gaugeChartOptions3.series"
+        [chart]="gaugeChartOptions3.chart"
+        [plotOptions]="gaugeChartOptions3.plotOptions"
+        [labels]="gaugeChartOptions3.labels"
+        [fill]="gaugeChartOptions3.fill"
+        [title]="gaugeChartOptions3.title"
+        ></apx-chart>
     </div>
   </div>
 
+  <div class="chart-row">
+    <div class="chart">
+      <apx-chart
+        [series]="lineChartOptions.series"
+        [chart]="lineChartOptions.chart"
+        [xaxis]="lineChartOptions.xaxis"
+        [stroke]="lineChartOptions.stroke"
+        [colors]="lineChartOptions.colors"
+        [dataLabels]="lineChartOptions.dataLabels"
+        [legend]="lineChartOptions.legend"
+        [markers]="lineChartOptions.markers"
+        [grid]="lineChartOptions.grid"
+        [yaxis]="lineChartOptions.yaxis"
+        [title]="lineChartOptions.title"
+      ></apx-chart>
+    </div>
+
+    <div class="chart">
+      <apx-chart
+        [series]="barChartOptions.series"
+        [chart]="barChartOptions.chart"
+        [dataLabels]="barChartOptions.dataLabels"
+        [plotOptions]="barChartOptions.plotOptions"
+        [yaxis]="barChartOptions.yaxis"
+        [xaxis]="barChartOptions.xaxis"
+        [fill]="barChartOptions.fill"
+        [title]="barChartOptions.title"
+      ></apx-chart>
+    </div>
+  </div>
 
 </div>
 

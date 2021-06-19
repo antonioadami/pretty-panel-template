@@ -23,3 +23,20 @@
   }
 
 }
+
+.gauge-chart-row {
+  padding: 1rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .chart {
+    padding: 1rem 0;
+    background-color: white;
+
+    width: calc(33% - 1rem);
+
+    border-radius: 12px;
+  }
+}
