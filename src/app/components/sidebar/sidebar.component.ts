@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { faChartBar, faTable } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChartBar,
+  faTable,
+  faFileAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,4 +14,6 @@ export class SidebarComponent {
   faChartBar = faChartBar;
 
   faTable = faTable;
+
+  faFileAlt = faFileAlt;
 }

@@ -13,9 +13,15 @@ import { AppRoutingModule } from './app.routing.module';
 import { ComponentsModule } from './components/components.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TablesComponent } from './pages/tables/tables.component';
+import { FormsComponent } from './pages/forms/forms.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, TablesComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    TablesComponent,
+    FormsComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
