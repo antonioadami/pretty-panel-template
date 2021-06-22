@@ -8,7 +8,7 @@ This is a design of an admin template built with Angular 11, Angular Material an
 
 ## Installing dependencies
 
-Run `npm install` or `yarn` install all the dependencies.
+Run `npm install` or `yarn` to install all the dependencies.
 
 ## Starting
 
