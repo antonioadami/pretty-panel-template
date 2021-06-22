@@ -45,8 +45,6 @@
           border-top-left-radius: 22.5px;
           border-bottom-left-radius: 22.5px;
 
-          // padding-left: 1rem;
-
           color: $app-background;
           font-weight: 500;
 
@@ -100,5 +98,22 @@
         }
       }
     }
+  }
+
+  .repo-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem;
+
+    a {
+      font-size: 16px;
+      font-weight: 600;
+      color: $app-dark-blue;
+
+      padding: 0.3rem 1rem;
+    }
+
   }
 }
