@@ -4,7 +4,7 @@
   </div>
 
   <div class="row">
-    <div class="form-card">
+    <div class="form-card" id="login">
       <div class="form-title">
         <h3>Login</h3>
       </div>
@@ -27,6 +27,65 @@
         </div>
 
         <div class="buttons-div">
+          <button mat-raised-button class="confirm-button">Submit</button>
+          <button mat-raised-button>Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-card" id="signin">
+      <div class="form-title">
+        <h3>Sign in</h3>
+      </div>
+      <form>
+
+        <div class="form-columns">
+          <div class="form-inputs">
+            <mat-form-field appearance="outline">
+              <mat-label>Username</mat-label>
+              <input matInput type="text">
+              <fa-icon matPrefix [icon]="faUser"></fa-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput type="email">
+              <fa-icon matPrefix [icon]="faEnvelope"></fa-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput type="password">
+              <fa-icon matPrefix [icon]="faKey"></fa-icon>
+            </mat-form-field>
+          </div>
+
+          <div class="form-inputs">
+            <mat-form-field appearance="outline">
+              <mat-label>Birthdate</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matPrefix [for]="picker">
+                <fa-icon matDatepickerToggleIcon [icon]="faCalendarAlt"></fa-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput type="email">
+              <fa-icon matPrefix [icon]="faEnvelope"></fa-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput type="password">
+              <fa-icon matPrefix [icon]="faKey"></fa-icon>
+            </mat-form-field> -->
+          </div>
+        </div>
+
+
+        <div class="buttons-div sign-in-buttons">
           <button mat-raised-button class="confirm-button">Submit</button>
           <button mat-raised-button>Cancel</button>
         </div>

@@ -14,12 +14,26 @@
   padding: 1rem 2rem;
 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: stretch;
+  align-items: stretch;
 
   .form-card {
     @include card-white;
-    padding: 2rem;
+    padding: 1rem 2rem 1.5rem;
+
+    &#login {
+      min-width: 260px;
+    }
+
+    &#signin {
+      min-width: 520px;
+    }
+
+    width: 100%;
+
+    &:not(:nth-last-child(1)) {
+      margin-right: 3rem;
+    }
 
     .form-title {
       color: $app-dark-blue;
@@ -29,11 +43,21 @@
       }
     }
 
-    .form-inputs{
+    .form-columns {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+      justify-content: stretch;
+
+      .form-inputs:not(:nth-last-child(1)) {
+        margin-right: 1.5rem;
+      }
+    }
+
+    .form-inputs {
+      flex: 1;
+
+      .mat-form-field {
+        width: 100%;
+      }
 
       ::ng-deep .mat-form-field-flex  {
         align-items: center;
@@ -45,9 +69,12 @@
         color: $app-dark-blue;
       }
 
+      ::ng-deep .mat-button-wrapper .ng-fa-icon{
+        margin: 0;
+      }
+
       @include checkbox-blue;
       @include outline-input-blue;
-
     }
 
     .buttons-div {
@@ -55,7 +82,9 @@
       justify-content: left;
       align-items: center;
 
-      margin-top: 1rem;
+      &:not(.sign-in-buttons) {
+        margin-top: 1rem;
+      }
 
       @include form-buttons;
     }

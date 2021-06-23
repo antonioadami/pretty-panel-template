@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 
-import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEnvelope,
+  faKey,
+  faUser,
+  faCalendarAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   templateUrl: './forms.component.html',
@@ -10,4 +15,8 @@ export class FormsComponent {
   faEnvelope = faEnvelope;
 
   faKey = faKey;
+
+  faUser = faUser;
+
+  faCalendarAlt = faCalendarAlt;
 }
