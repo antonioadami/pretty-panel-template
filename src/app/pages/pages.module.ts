@@ -9,12 +9,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
+
+import { MatNativeDateModule } from '@angular/material/core';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TablesComponent } from './tables/tables.component';
 import { FormsComponent } from './forms/forms.component';
-
 @NgModule({
   declarations: [DashboardComponent, TablesComponent, FormsComponent],
   imports: [
@@ -22,12 +23,15 @@ import { FormsComponent } from './forms/forms.component';
 
     NgApexchartsModule,
 
+    MatNativeDateModule,
+
     MatTableModule,
     MatTooltipModule,
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatDatepickerModule,
   ],
 })
 export class PagesModule {}

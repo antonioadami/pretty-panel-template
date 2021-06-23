@@ -1,0 +1,65 @@
+@import './variables';
+
+@mixin checkbox-blue {
+
+  ::ng-deep .mat-checkbox-checked .mat-checkbox-inner-container .mat-checkbox-background {
+    background-color: $app-dark-blue;
+  }
+
+  ::ng-deep div.mat-ripple-element {
+    background-color: $app-dark-blue;
+    opacity: 40%;
+  }
+}
+
+@mixin outline-input-blue {
+
+  ::ng-deep .mat-form-field-appearance-outline {
+    &.mat-focused,&:hover {
+      .mat-form-field-outline {
+        color: $app-dark-blue;
+      }
+    }
+  }
+
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: $app-dark-blue;
+  }
+
+  ::ng-deep .mat-input-element {
+    caret-color: $app-dark-blue;
+  }
+}
+
+@mixin form-buttons {
+
+  button {
+    font-size: 16px;
+
+    &:not(:nth-child(1)) {
+      margin-left: 1rem;
+    }
+
+    &:not(.confirm-button) {
+      color: $app-dark-blue;
+    }
+  }
+}
+
+@mixin card-white {
+  background-color: white;
+
+  border-radius: 12px;
+
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+@mixin page-title {
+  padding: 1rem 2rem 0;
+
+  color: $app-dark-blue;
+
+  h2 {
+    margin: 0;
+  }
+}

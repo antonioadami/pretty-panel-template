@@ -1,4 +1,5 @@
 @import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
 
 .body {
   width: 100%;
@@ -6,30 +7,33 @@
 }
 
 .title {
-  padding: 1rem 2rem 0;
-
-  color: $app-dark-blue;
-
-  h2 {
-    margin: 0;
-  }
+  @include page-title;
 }
 
 .row {
   padding: 1rem 2rem;
 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: stretch;
+  align-items: stretch;
 
   .form-card {
-    background-color: white;
+    @include card-white;
+    padding: 1rem 2rem 1.5rem;
 
-    border-radius: 12px;
+    &#login {
+      min-width: 260px;
+    }
 
-    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+    &#signin {
+      min-width: 520px;
+    }
 
-    padding: 2rem;
+    width: 100%;
+
+    &:not(:nth-last-child(1)) {
+      margin-right: 3rem;
+    }
 
     .form-title {
       color: $app-dark-blue;
@@ -39,30 +43,24 @@
       }
     }
 
-    .form-inputs{
+    .form-columns {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+      justify-content: stretch;
+
+      .form-inputs:not(:nth-last-child(1)) {
+        margin-right: 1.5rem;
+      }
+    }
+
+    .form-inputs {
+      flex: 1;
+
+      .mat-form-field {
+        width: 100%;
+      }
 
       ::ng-deep .mat-form-field-flex  {
         align-items: center;
-      }
-
-      ::ng-deep .mat-form-field-appearance-outline{
-        &.mat-focused,&:hover {
-          .mat-form-field-outline {
-            color: $app-dark-blue;
-          }
-        }
-      }
-
-      ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-        color: $app-dark-blue;
-      }
-
-      ::ng-deep .mat-input-element {
-        caret-color: $app-dark-blue;
       }
 
       .ng-fa-icon {
@@ -71,10 +69,12 @@
         color: $app-dark-blue;
       }
 
-      ::ng-deep .mat-checkbox-checked .mat-checkbox-inner-container .mat-checkbox-background{
-        background-color: $app-dark-blue;
+      ::ng-deep .mat-button-wrapper .ng-fa-icon{
+        margin: 0;
       }
 
+      @include checkbox-blue;
+      @include outline-input-blue;
     }
 
     .buttons-div {
@@ -82,19 +82,11 @@
       justify-content: left;
       align-items: center;
 
-      margin-top: 1rem;
-
-      button {
-        font-size: 16px;
-
-        &:not(:nth-child(1)) {
-          margin-left: 1rem;
-        }
-
-        &:not(.confirm-button) {
-          color: $app-dark-blue;
-        }
+      &:not(.sign-in-buttons) {
+        margin-top: 1rem;
       }
+
+      @include form-buttons;
     }
 
   }
