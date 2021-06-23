@@ -5,6 +5,7 @@ import {
   faKey,
   faUser,
   faCalendarAlt,
+  faPhoneAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -19,4 +20,6 @@ export class FormsComponent {
   faUser = faUser;
 
   faCalendarAlt = faCalendarAlt;
+
+  faPhoneAlt = faPhoneAlt;
 }
