@@ -10,17 +10,11 @@
 }
 
 .title {
-  padding: 1rem 2rem;
-
-  color: $app-dark-blue;
-
-  h2 {
-    margin: 0;
-  }
+  @include page-title;
 }
 
 .simple-table, .striped-table {
-  margin: 0 2rem 2rem;
+  margin: 1rem 2rem 2rem;
 
   width: calc(100% - 6rem);
 
